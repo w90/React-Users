@@ -1,25 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Notification from './Notification';
+import List from './List';
+import ListForm from './ListForm';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: [
+          { email: 'asdf@asdf.pl', nickname: 'Tony', ip: '12123.123.123.131', date: 2349728934789 },
+          { email: 'melo@tan.pl', nickname: 'Man', ip: '192.168.111.111', date: 982374892378942 },
+
+      ],
+      notification: null,
+    }
+  }
+
+  getUsersSortedByProperty(users, property) {
+    return [...users].sort((userA, userB) => userA[property] - userB[property]);
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Notification />
+        <List />
+        <ListForm />
       </div>
     );
   }
