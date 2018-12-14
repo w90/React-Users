@@ -1,8 +1,15 @@
 import React from 'react';
 
-export default function ListFormInput({ type, name, placeholder }) {
+export default function ListFormInput({ type, name, value, placeholder, handleInputChange }) {
   return (
-      <input type={type} name={name} placeholder={placeholder}/>
+      <input
+          className={'user-input'}
+          type={type}
+          name={name}
+          value={value}
+          placeholder={placeholder}
+          onChange={handleInputChange}
+      />
   )
 }
 

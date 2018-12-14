@@ -1,0 +1,92 @@
+$color-main: #34873e;
+$color-bg: #232e26;
+
+body {
+  background-color: $color-bg;
+}
+
+.app {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+* {
+  color: $color-main;
+
+  :focus {
+    outline: none;
+  }
+}
+
+.users-list {
+  padding: 0;
+
+  &-container {
+    margin-bottom: 40px;
+  }
+
+  &-sorting {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $color-main;
+    margin-bottom: 10px;
+  }
+
+  &-item {
+    display: block;
+    padding: 0;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: 576px) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    div {
+      min-width: 160px;
+    }
+  }
+
+  &-button-container {
+    text-align: left;
+
+    @media screen and (min-width: 576px) {
+      text-align: right;
+    }
+
+  }
+
+  &-form {
+    display: block;
+
+    @media screen and (min-width: 576px) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+}
+
+button, input {
+  background-color: transparent;
+  margin-bottom: 10px;
+}
+
+button {
+  border: 1px solid $color-main;
+
+  &[disabled] {
+    color: gray;
+    border-color: gray;
+  }
+}
+
+input{
+  display: block;
+  border: 0;
+  border-bottom: 1px solid $color-main;
+  &::placeholder {
+    color: $color-main;
+  }
+}
